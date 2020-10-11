@@ -22,6 +22,26 @@ public class LinkedList<K> {
 		}
 	}	
 	
+	public void append(INode<K> newNode) {
+		if (this.tail == null) {
+			this.tail = newNode;
+		}
+		if (this.head == null) {
+			this.head = newNode;
+		} 
+		else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+		}
+	}
 	
+	public void print() {
+		INode<K> tmp = head ; 
+		while(tmp != null) {
+			System.out.print(tmp.getKey()+"->");
+			tmp=tmp.getNext();
+		}
+		System.out.println();
+	}
 	
 }
