@@ -75,5 +75,16 @@ public class LinkedList<K> {
 		}
 		return false;
 	}
+	
+	public void insert(INode<K> pNode, INode<K> node) {
+		if(pNode.getNext() == null) {
+			pNode.setNext(node);
+		}
+		else {
+			INode<K> tmp = pNode.getNext();
+			pNode.setNext(node);
+			node.setNext(tmp);
+		}
+	}
 
 }
