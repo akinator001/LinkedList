@@ -144,12 +144,32 @@ public class NodeTest {
 	 		linkedList.append(firstNode);
 	 		linkedList.append(secondNode);
 	 		linkedList.append(thirdNode);
-	 		linkedList.print();
+//	 		linkedList.print();
 	 		linkedList.insert(secondNode, fourthNode);
-	 		linkedList.print();
+//	 		linkedList.print();
 	 		boolean result = linkedList.head.equals(firstNode) && linkedList.head.getNext().equals(secondNode)
 	 				&& linkedList.head.getNext().getNext().equals(fourthNode) && linkedList.tail.equals(thirdNode);
 	 		assertTrue(result);
-	    }
+	  }
+	 @Test
+	 public void givenNumbersTestingDeleteFunction() {
+	   	Node<Integer> firstNode = new Node<>(56);
+ 		Node<Integer> secondNode = new Node<>(30);
+ 		Node<Integer> thirdNode = new Node<>(40);
+	 	Node<Integer> fourthNode = new Node<>(70);
+	 
+	 	LinkedList<Integer> linkedList = new LinkedList<>();
+	 	linkedList.append(firstNode);
+	 	linkedList.append(secondNode);
+	 	linkedList.append(thirdNode);
+	 	linkedList.append(fourthNode);
+		
+	 	boolean bool = linkedList.searchNode(40);
+	 	if(bool)
+	 		linkedList.pop(thirdNode);
+	 	linkedList.print();
+	 	System.out.println(linkedList.size());
+	 	Assert.assertEquals(3, linkedList.size());
+	 }
 
 }

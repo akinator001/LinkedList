@@ -87,4 +87,22 @@ public class LinkedList<K> {
 		}
 	}
 
+	public int size() {
+		int size = 0;
+		INode<K> tmp = head;
+		while (tmp != null) {
+			size++;
+			tmp = tmp.getNext();
+		}
+		return size;
+	}
+	
+	public void pop(INode<K> node) {
+		INode<K> tmp = head;
+		while (tmp.getNext() != node) {
+			tmp = tmp.getNext();
+		}
+		tmp.setNext(node.getNext());
+	}
+		
 }
