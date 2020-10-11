@@ -55,4 +55,15 @@ public class LinkedList<K> {
 		return tmp;	
 	}
 	
+	public INode<K> popLast() {
+		INode<K> tmp = head;
+		while( tmp.getNext() != tail) {
+			tmp = tmp.getNext();
+		}
+		tail = tmp;
+		tmp = tmp.getNext();
+		tail.setNext(null);
+		return tmp;
+	}
+	
 }
