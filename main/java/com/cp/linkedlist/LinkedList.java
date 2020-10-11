@@ -66,4 +66,14 @@ public class LinkedList<K> {
 		return tmp;
 	}
 	
+	public boolean searchNode(K key){
+		INode<K> tmp = head;
+		while(tmp != null) {
+			if(tmp.getKey() == key)
+				return true;
+			tmp = tmp.getNext();
+		}
+		return false;
+	}
+
 }

@@ -115,4 +115,21 @@ public class NodeTest {
 	 				&& linkedList.tail.equals(thirdNode);
 	 	Assert.assertTrue(result);
 	 }
+	 
+	 @Test
+	 public void givenNumbersTestingSearchFunction() {
+	    Node<Integer> firstNode = new Node<>(70);
+	 	Node<Integer> secondNode = new Node<>(30);
+	 	Node<Integer> thirdNode = new Node<>(56);
+		Node<Integer> fourthNode = new Node<>(60);
+	
+		LinkedList<Integer> linkedList = new LinkedList<>();
+	 	linkedList.append(firstNode);
+	 	linkedList.append(secondNode);
+	 	linkedList.append(thirdNode);
+	 	linkedList.append(fourthNode);
+		System.out.println(linkedList.searchNode(70));
+	 		
+		Assert.assertEquals(true, linkedList.searchNode(30));
+	 }
 }
