@@ -49,4 +49,10 @@ public class LinkedList<K> {
 		node.setNext(nNode);
 	}
 	
+	public INode<K> pop() {
+		INode<K> tmp = head;
+		head = head.getNext();
+		return tmp;	
+	}
+	
 }
